@@ -18,7 +18,7 @@ echo "Generating $CLIENT.ovpn"
 sed -e "{s/^key client.key/key $CLIENT.key/
 s/^cert client.crt/cert $CLIENT.crt/}" client.conf > $CONFIG_FILE
 
-zip "$CLIENT.zip" "$CLIENT.{key,crt}" ca.crt $CONFIG_FILE
+zip "$CLIENT.zip" "$CLIENT".{key,crt} ca.crt $CONFIG_FILE
 
 rm -f $CLIENT.{key,crt} $CONFIG_FILE
 
